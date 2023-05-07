@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shorcut icon" type="x-icon" href="social.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" id="miApp">
+        <div class="row">
+            <div class="col-12">
+                <input type="text" class="form-control" v-model="nueva" @keypress.enter="agregarFrase">
+                <ul v-for="({texto, autor, id},index) in frases" :key="id">
+                    <li>
+                        <strong>"{{ index }} {{ texto }}"</strong>
+                        <p v-show="autor">Autor: {{ autor }} </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--
+        Instalar Vue Developer Tools
+        https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd
+        
+    -->
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
